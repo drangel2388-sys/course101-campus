@@ -1067,7 +1067,7 @@ const DATA={
  lesson:{id:"CS-03",title:"Variables and types",dept:"cs",steps:[
   {h:"1. What is a variable?",b:"A variable is a name that refers to a value. In Python you create one with the equals sign: <code>speed = 12</code>. Think of it as a labelled box."},
   {h:"2. Types of values",b:"Every value has a type. <code>12</code> is an <code>int</code>, <code>3.5</code> is a <code>float</code>, <code>\"hello\"</code> is a <code>str</code>, and <code>True</code> is a <code>bool</code>."},
-  {h:"3. Quick check",q:{text:"What is the type of the value \"42\" (with quotes)?",opts:["int","str","float","bool"],a:1}},
+  {h:"3. Quick check",q:{text:"What is the type of the value \"42\" (with quotes)?",opts:["int","str","float","bool"]}},
   {h:"4. Summary",b:"Variables name values; types describe what kind of value it is. Next lesson: loops and conditions. In the real Course 101, your ChatGPT instructor would record this result."}
  ]}
 };
@@ -1077,7 +1077,7 @@ const KEY="course101_demo_lesson_v1";
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const demo='<p class="hud" role="note">&#9632; DEMO DATA, fictional. Not a real student record.</p>';
-function load(){try{return JSON.parse(localStorage.getItem(KEY))||{step:0,ans:null,done:false}}catch(e){return{step:0,ans:null,done:false}}}
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{step:0,done:false}}catch(e){return{step:0,done:false}}}
 function save(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}}
 function pct(d){const l=d.lessons;return Math.round(100*l.filter(x=>x.s==="done").length/l.length)}
 function bar(p,label){return `<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${p}" aria-label="${esc(label)}"><i style="width:${p}%"></i></div>`}
@@ -1247,15 +1247,14 @@ const REDIRECT={"#/arrival":"#/campus","#/gate":"#/campus","#/intro":"#/campus",
 function toast(m){const t=document.createElement("div");t.className="toast";t.setAttribute("role","status");t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),2600)}
 /* ===== Lesson ===== */
 function renderLesson(){const L=DATA.lesson,st=load(),box=$("#lesson");if(!box)return;const i=Math.min(st.step,L.steps.length-1),s=L.steps[i];
- let body=s.q?`<fieldset><legend>${esc(s.q.text)}</legend>${s.q.opts.map((o,k)=>`<label class="opt"><input type="radio" name="q" value="${k}" ${st.ans===k?"checked":""}> ${esc(o)}</label>`).join("")}</fieldset><button class="btn ghost" id="check" style="margin-top:8px">Check answer</button><div class="fb" id="fb" aria-live="polite">${st.ans!=null?(st.ans===s.q.a?"Correct: quotes make it a str.":"Not quite, try again."):""}</div>`:`<p>${s.b}</p>`;
- const needs=s.q&&st.ans!==s.q.a;
+ let body=s.q?`<fieldset><legend>${esc(s.q.text)}</legend>${s.q.opts.map((o,k)=>`<label class="opt"><input type="radio" name="q" value="${k}"> ${esc(o)}</label>`).join("")}</fieldset><p class="fb" id="fb" role="note">Answer checking is not available in this demo, so review with your course materials. Your choice is not saved or scored.</p>`:`<p>${s.b}</p>`;
+ const needs=false;
  box.innerHTML=`<div class="card glow"><p class="hud" id="stepl">Step ${i+1} of ${L.steps.length}${st.done?" · Completed":""}</p><ol class="steps" aria-hidden="true">${L.steps.map((_,k)=>`<li class="${k<=i?"on":""}"></li>`).join("")}</ol><h2 tabindex="-1" id="sh">${esc(s.h)}</h2>${body}
- <div class="row" style="margin-top:14px"><button class="btn ghost" id="prev" ${i===0?"disabled":""}>Previous</button>${i<L.steps.length-1?`<button class="btn" id="next" ${needs?"disabled":""}>Next step</button>`:`<button class="btn" id="fin">${st.done?"Completed ✓":"Mark complete"}</button>`}<button class="btn ghost" id="reset">Reset Demo</button></div>
+ <div class="row" style="margin-top:14px"><button class="btn ghost" id="prev" ${i===0?"disabled":""}>Previous</button>${i<L.steps.length-1?`<button class="btn" id="next">Next step</button>`:`<button class="btn" id="fin">${st.done?"Completed ✓":"Mark complete"}</button>`}<button class="btn ghost" id="reset">Reset Demo</button></div>
  <p class="sub" style="margin-top:10px">Progress auto-saves in this browser only. Reload the page and use Continue Lesson to resume here.</p></div>`;
  const upd=()=>{const t=load();$("#resume").innerHTML=`\u25B6 Resume<span class="rl"> Learning · step</span> ${Math.min(t.step+1,L.steps.length)}/${L.steps.length}`};const go=n=>{const x=load();x.step=n;save(x);renderLesson();upd();$("#sh").focus()};
  $("#prev").onclick=()=>go(i-1);if($("#next"))$("#next").onclick=()=>go(i+1);
  if($("#fin"))$("#fin").onclick=()=>{const x=load();x.done=true;save(x);renderLesson();toast("DEMO: lesson marked complete (local only).")};
- if($("#check"))$("#check").onclick=()=>{const c=box.querySelector("input[name=q]:checked");if(!c){$("#fb").textContent="Select an answer first.";return}const x=load();x.ans=+c.value;save(x);renderLesson();$("#check").focus()};
  $("#reset").onclick=()=>{try{localStorage.removeItem(KEY)}catch(e){}renderLesson();upd();toast("Demo progress reset.");$("#sh").focus()};
 }
 /* ===== Skill tree interaction ===== */
