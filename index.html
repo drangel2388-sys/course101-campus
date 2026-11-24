@@ -347,6 +347,28 @@ nav a{min-height:44px;display:inline-flex;align-items:center;box-sizing:border-b
 .v11sec:focus{outline:3px solid var(--cy);outline-offset:2px}
 @media (max-width:760px){.v11secs{grid-template-columns:1fr}}
 
+/* ===== V11 Year 1 preview outline (not released) ===== */
+.v11y1banner{margin:10px 0;padding:12px 14px;border:2px solid var(--warn);border-radius:var(--rad);background:rgba(240,179,90,.12);color:var(--warn);font-weight:700}
+.v11y1badge{display:inline-block;margin:0 6px 0 0;padding:3px 8px;border:1px solid var(--warn);border-radius:4px;color:var(--warn);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.v11y1hold{margin:6px 0;color:var(--warn);font-weight:700}
+.v11y1intro,.v11y1proj{margin:10px 0}
+.v11y1terms{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.v11y1term{margin:0}
+.v11y1term h2,.v11y1proj h2,.v11y1err h2{margin-top:0}
+.v11y1weeks{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px}
+.v11y1week{display:block}
+.v11y1week a,.v11y1links a,.v11y1entry a,.v11y1term .v11y1tlink{min-height:44px;min-width:44px;display:flex;align-items:center;box-sizing:border-box;gap:8px;flex-wrap:wrap;padding:8px 10px;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:6px;background:var(--bg3)}
+.v11y1week a:focus-visible,.v11y1links a:focus-visible,.v11y1entry a:focus-visible,.v11y1term .v11y1tlink:focus-visible{outline:3px solid var(--cy);outline-offset:2px}
+.v11y1wn{font-weight:700}.v11y1week a,.v11y1term{overflow-wrap:anywhere}
+.v11y1topics{margin:6px 0 0;padding-left:1.2em}
+.v11y1ms{margin:6px 0 0;padding-left:1.2em}
+.v11y1links{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.v11y1links a{display:inline-flex;justify-content:center;padding:6px 12px;font-weight:700}
+.v11y1entry{margin:10px 0 0}
+.v11y1entry a{display:inline-flex;justify-content:center;width:auto;font-weight:700;color:var(--acc);border-color:var(--acc)}
+.v11y1err{border-color:#e06c6c}.v11y1err h2{color:#ff9a9a}
+@media (max-width:640px){.v11y1terms{grid-template-columns:1fr}.v11y1week a,.v11y1links a{width:100%}}
+
 </style>
 </head>
 <body>
@@ -1008,6 +1030,712 @@ nav a{min-height:44px;display:inline-flex;align-items:center;box-sizing:border-b
   }
  ]
 }</script>
+<script type="application/json" id="v11-year1-data">{
+ "title": "Course 101 Year 1 Preview Outline",
+ "version": "v1",
+ "status": "PREVIEW, not yet open: Weeks open only after Daniel says go.",
+ "open_rule": "This is a preview of Year 1 (Weeks 1\u201348). No week is open yet. Weeks 1\u20132 open only after the MacBook Neo check passes and Daniel says go. Later weeks open only after Daniel says go.",
+ "calendar": "Option A",
+ "hours_per_week": 15,
+ "year_1_weeks": 48,
+ "year_1_hours": 720,
+ "weekly_pattern": {
+  "mathematics_hours": 5,
+  "programming_tools_or_project_hours": 6,
+  "lab_or_project_hours": 2,
+  "review_hours": 1.5,
+  "records_hours": 0.5,
+  "total_hours": 15,
+  "note": "These are the usual planned amounts inside each 15-hour week. In project-heavy weeks, programming time is used for the project."
+ },
+ "terms": [
+  {
+   "term": 1,
+   "weeks": "1-12",
+   "hours": 180,
+   "focus": "Readiness, arithmetic, first algebra, Python, and qualitative electricity"
+  },
+  {
+   "term": 2,
+   "weeks": "13-24",
+   "hours": 180,
+   "focus": "More independent Python, numerical DC circuits, and Project 1"
+  },
+  {
+   "term": 3,
+   "weeks": "25-36",
+   "hours": 180,
+   "focus": "C programming, binary representation, Boolean and digital logic, geometry and trigonometry, and Project 2 design"
+  },
+  {
+   "term": 4,
+   "weeks": "37-48",
+   "hours": 180,
+   "focus": "Vectors and function review, C memory, adders, finishing Project 2, and Year 1 review"
+  }
+ ],
+ "projects": [
+  {
+   "name": "Project 1: Recipe-quantity tool",
+   "summary": "A local command-line tool that reads a documented list of items, quantities, and units; checks the input; combines matching items; and scales a recipe or stock list by a positive factor. It does not overwrite the original file.",
+   "milestones": [
+    {
+     "week": 2,
+     "name": "Engineering notebook and problem statement"
+    },
+    {
+     "week": 6,
+     "name": "Requirements"
+    },
+    {
+     "week": 10,
+     "name": "Acceptance cases"
+    },
+    {
+     "week": 14,
+     "name": "Design"
+    },
+    {
+     "week": 18,
+     "name": "Prototype review"
+    },
+    {
+     "week": 22,
+     "name": "Build and tests"
+    },
+    {
+     "week": 23,
+     "name": "Finish the build"
+    },
+    {
+     "week": 24,
+     "name": "Defense"
+    },
+    {
+     "week": 26,
+     "name": "Release review"
+    }
+   ]
+  },
+  {
+   "name": "Project 2: Voltage-divider calculator",
+   "summary": "A local calculator for an ideal DC voltage divider with two valid resistors and a finite source voltage. You predict by hand, write a Python program, and compare with a saved simulator run. A loaded case comes only after parallel reduction is in place. A later week adds a fresh change and a reproducibility check.",
+   "milestones": [
+    {
+     "week": 31,
+     "name": "Specification"
+    },
+    {
+     "week": 35,
+     "name": "Design"
+    },
+    {
+     "week": 39,
+     "name": "Implementation lab"
+    },
+    {
+     "week": 40,
+     "name": "Coding"
+    },
+    {
+     "week": 41,
+     "name": "Coding"
+    },
+    {
+     "week": 41,
+     "name": "Independent change"
+    },
+    {
+     "week": 43,
+     "name": "Tests and report"
+    },
+    {
+     "week": 43,
+     "name": "Reproducibility"
+    },
+    {
+     "week": 45,
+     "name": "Defense"
+    }
+   ]
+  }
+ ],
+ "weeks": [
+  {
+   "week": 1,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Signed numbers, order of operations, and following a short procedure",
+    "Programming and tools: Computer setup; files, folders, and a first Python run",
+    "Lab: Using AI safely \u2014 privacy, disclosure, and checking a static answer against evidence"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 2,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: More practice with signed numbers, order of operations, and short procedures",
+    "Programming and tools: Save, reopen, and recover a file; run a small program again",
+    "Project: Start an engineering notebook and turn a vague request into a clear problem statement"
+   ],
+   "project_milestones": [
+    "Project 1: Engineering notebook and problem statement"
+   ]
+  },
+  {
+   "week": 3,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Fractions and signs",
+    "Programming and tools: Python functions, variables, expressions, types, and input",
+    "Lab: Qualitative electricity \u2014 charge, conservation, and a simple one-loop circuit"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 4,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Ratios and unit conversions",
+    "Programming and tools: Tracing a Python program; local Git, recovery, and a README",
+    "Lab: Electrical sources and meters \u2014 where the meter goes"
+   ],
+   "project_milestones": [],
+   "note": "Includes a short review of the first four weeks."
+  },
+  {
+   "week": 5,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Decimals, percent, and estimation",
+    "Programming and tools: Branches, comparisons, Boolean logic, traces, and test tables",
+    "Lab: AI claims, sources, verification, and limits"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 6,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Mixed review of decimals, percent, estimation, and earlier arithmetic",
+    "Programming and tools: Boundaries and validation in Python",
+    "Project: Write requirements and a requirements-to-test trace for the recipe-quantity tool"
+   ],
+   "project_milestones": [
+    "Project 1: Requirements"
+   ]
+  },
+  {
+   "week": 7,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Arithmetic transfer and consolidation",
+    "Programming and tools: Loops, lists, and dictionaries",
+    "Lab: Qualitative circuit paths, loops, and series/parallel connections"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 8,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Continued arithmetic consolidation and review",
+    "Programming and tools: Collections in Python and Git recovery",
+    "Lab: Opens, bypasses, source shorts, and the limits of a simple circuit model (qualitative)"
+   ],
+   "project_milestones": [],
+   "note": "Includes a short review of the last four weeks."
+  },
+  {
+   "week": 9,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Expressions and linear equations",
+    "Programming and tools: Errors, exceptions, and checking input",
+    "Lab: Turning a request into a testable specification, with attention to privacy and verification"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 10,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Multi-step linear equations; rearranging formulas and units",
+    "Programming and tools: Validation in Python",
+    "Project: Acceptance cases and a requirements-to-test dossier"
+   ],
+   "project_milestones": [
+    "Project 1: Acceptance cases"
+   ]
+  },
+  {
+   "week": 11,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Linear models and graphs",
+    "Programming and tools: Using the Python standard library",
+    "Lab: Energy, power, and the limits of ideal electrical models"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 12,
+   "hours": 15,
+   "term": 1,
+   "topics": [
+    "Mathematics: Linear inequalities, plus review of linear equations",
+    "Programming and tools: Reading documentation and recovery",
+    "Lab and review: Qualitative electricity ideas from earlier weeks"
+   ],
+   "project_milestones": [],
+   "note": "Includes term-end review time."
+  },
+  {
+   "week": 13,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Systems of two linear equations",
+    "Programming and tools: Testing your code",
+    "Lab: DC readiness \u2014 circuit shapes, conservation, and what the simulator is for (qualitative; no numerical DC yet)"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 14,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Applications of systems of equations",
+    "Programming and tools: Debugging",
+    "Project: Design the recipe-quantity tool (no code yet)"
+   ],
+   "project_milestones": [
+    "Project 1: Design"
+   ]
+  },
+  {
+   "week": 15,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Exponents and scientific notation",
+    "Programming and tools: Files and CSV",
+    "Lab: Ohm's law, power, and series networks \u2014 numerical DC begins; predict before you run"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 16,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Polynomial operations",
+    "Programming and tools: CSV work and Git recovery",
+    "Lab: Power balance, boundaries, and model limits \u2014 predict, then run"
+   ],
+   "project_milestones": [],
+   "note": "Includes a short review of the last four weeks."
+  },
+  {
+   "week": 17,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Factoring",
+    "Programming and tools: Regular expressions and validation",
+    "Lab: Evidence, permissions, and checking AI answers stored as static JSON (local only; no live services)"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 18,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Quadratic equations",
+    "Programming and tools: Validation with patterns",
+    "Project: Build and review a small local prototype of the recipe-quantity tool"
+   ],
+   "project_milestones": [
+    "Project 1: Prototype review"
+   ]
+  },
+  {
+   "week": 19,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Quadratic graphs",
+    "Programming and tools: Classes and object state",
+    "Lab: Parallel networks and the current rule at a single junction"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 20,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Rational expressions and domains",
+    "Programming and tools: Invariants \u2014 rules that must stay true as a program runs",
+    "Lab: An unloaded divider, series-parallel reductions, and an introduction to tolerance"
+   ],
+   "project_milestones": [],
+   "note": "Includes a short review of the last four weeks."
+  },
+  {
+   "week": 21,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Roots and rational powers",
+    "Programming and tools: Putting the Python pieces together",
+    "Lab: Evaluating AI claims and running fair tests with static cases"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 22,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Functions and domain",
+    "Project: Build the recipe-quantity tool and write its tests"
+   ],
+   "project_milestones": [
+    "Project 1: Build and tests"
+   ]
+  },
+  {
+   "week": 23,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Composition and inverse functions (introduction)",
+    "Project: Finish the build, do a clean rerun, and try a short change drill",
+    "Lab: A loaded divider using parallel reduction, and a first look at fault isolation"
+   ],
+   "project_milestones": [
+    "Project 1: Finish the build"
+   ]
+  },
+  {
+   "week": 24,
+   "hours": 15,
+   "term": 2,
+   "topics": [
+    "Mathematics: Algebra review and practice on the strands taught so far",
+    "Project: Project 1 defense and follow-up practice",
+    "Lab: DC fault isolation, tolerance, and consolidation"
+   ],
+   "project_milestones": [
+    "Project 1: Defense"
+   ],
+   "note": "Includes term-end review time."
+  },
+  {
+   "week": 25,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Exponential functions",
+    "Programming and tools: Python consolidation and recovery",
+    "Lab: Binary and hexadecimal representation"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 26,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Logarithms",
+    "Project: Project 1 release review",
+    "Lab: Signed binary numbers, overflow, and representation practice"
+   ],
+   "project_milestones": [
+    "Project 1: Release review"
+   ]
+  },
+  {
+   "week": 27,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Exponential and log equations",
+    "Programming and tools: C language \u2014 types, control flow, and functions"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 28,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Algebra consolidation and review",
+    "Programming and tools: Writing tests in C",
+    "Lab: Boolean values and truth tables"
+   ],
+   "project_milestones": [],
+   "note": "Includes a short review of the last four weeks."
+  },
+  {
+   "week": 29,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Algebra review and consolidation",
+    "Programming and tools: Transfer practice in C \u2014 types, control, functions, and tests",
+    "Lab: Alternative DC reductions and a multi-fault diagnosis extension"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 30,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Algebra consolidation",
+    "Programming and tools: Recovery practice in C",
+    "Lab: Read-only orientation to hardware description \u2014 how an interface is described, with no construction yet"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 31,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Triangle relationships, with algebra review as needed",
+    "Programming and tools: Arrays and indexing in C",
+    "Project: Write the specification for the voltage-divider calculator (no build yet)"
+   ],
+   "project_milestones": [
+    "Project 2: Specification"
+   ]
+  },
+  {
+   "week": 32,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Geometry and triangle relationships",
+    "Programming and tools: Strings and bounds in C",
+    "Lab: Digital logic \u2014 construct Not, And, and Or"
+   ],
+   "project_milestones": [],
+   "note": "Includes a short review of the last four weeks."
+  },
+  {
+   "week": 33,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Right-triangle ratios (sine, cosine, and tangent)",
+    "Programming and tools: Transfer practice in C \u2014 arrays, bounds, and short strings",
+    "Lab: An analytic DC cross-check on independent cases"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 34,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Radians and the unit circle",
+    "Programming and tools: Linear search in C",
+    "Lab: Digital logic \u2014 construct Xor, Mux, and DMux"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 35,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Trigonometric graphs and identities",
+    "Programming and tools: Insertion sort and how running time grows",
+    "Project: Design the voltage-divider calculator (no build yet)"
+   ],
+   "project_milestones": [
+    "Project 2: Design"
+   ]
+  },
+  {
+   "week": 36,
+   "hours": 15,
+   "term": 3,
+   "topics": [
+    "Mathematics: Trigonometric equations and inverse trig",
+    "Programming and tools: Debugging C programs (search and sort)",
+    "Lab: Digital logic integration and a planted fault"
+   ],
+   "project_milestones": [],
+   "note": "Includes a broader review of recent weeks."
+  },
+  {
+   "week": 37,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Vector components",
+    "Programming and tools: Pointers and address traces in C",
+    "Lab: An independent DC analysis case"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 38,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Vector magnitude and direction",
+    "Programming and tools: Allocating and freeing memory in C",
+    "Lab: Binary addition"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 39,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Functions, composition, inverses, and trig consolidation",
+    "Programming and tools: Diagnosing memory faults in C",
+    "Project: Implementation lab for the voltage-divider calculator"
+   ],
+   "project_milestones": [
+    "Project 2: Implementation lab"
+   ]
+  },
+  {
+   "week": 40,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Function and exponential modeling",
+    "Project: Coding the voltage-divider calculator, plus C review as needed",
+    "Lab: Digital adders \u2014 the half adder"
+   ],
+   "project_milestones": [
+    "Project 2: Coding"
+   ],
+   "note": "Includes a short review of the last four weeks."
+  },
+  {
+   "week": 41,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Functions, trig, and vectors \u2014 consolidation",
+    "Project: Continue coding, then make an independent change to the voltage-divider calculator"
+   ],
+   "project_milestones": [
+    "Project 2: Coding",
+    "Project 2: Independent change"
+   ]
+  },
+  {
+   "week": 42,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Functions, trig, and vectors \u2014 practice",
+    "Programming and tools: Memory and arrays consolidation in C",
+    "Lab: Digital adders \u2014 the full adder"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 43,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Functions, trig, and vectors \u2014 transfer practice",
+    "Project: Tests, a short report, and a reproducibility check for the voltage-divider calculator, plus C review as needed"
+   ],
+   "project_milestones": [
+    "Project 2: Tests and report",
+    "Project 2: Reproducibility"
+   ]
+  },
+  {
+   "week": 44,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Functions, trig, and vectors \u2014 cumulative review",
+    "Programming and tools: C programming review and independent practice",
+    "Lab: Digital adders \u2014 validation practice"
+   ],
+   "project_milestones": [],
+   "note": "Includes term-end review time."
+  },
+  {
+   "week": 45,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Review of functions, trig, and vectors",
+    "Programming and tools: Optional portfolio cleanup (no new programming topic)",
+    "Project: Project 2 defense"
+   ],
+   "project_milestones": [
+    "Project 2: Defense"
+   ],
+   "note": "Six hours of portfolio cleanup this week are optional; the calendar week is still 15 hours."
+  },
+  {
+   "week": 46,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Targeted review and practice on remaining math gaps",
+    "Programming and tools: C programming review",
+    "Lab: Digital logic practice on the gates and adders already taught"
+   ],
+   "project_milestones": []
+  },
+  {
+   "week": 47,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Follow-up review of functions, trig, and vectors",
+    "Programming and tools: Independent code and debug recheck",
+    "Project: Portfolio reflection on what was built and what its limits were"
+   ],
+   "project_milestones": [
+    "Portfolio reflection"
+   ]
+  },
+  {
+   "week": 48,
+   "hours": 15,
+   "term": 4,
+   "topics": [
+    "Mathematics: Year 1 math review and gap check (not a calculus lesson)",
+    "Programming and tools: Reproducibility and a close of Year 1 programming notes",
+    "Lab: Combined DC and digital review"
+   ],
+   "project_milestones": [],
+   "note": "Includes a year-in-review practice set. Unfinished outcomes are carried forward, not marked complete."
+  }
+ ]
+}</script>
 <script>
 "use strict";
 /* ===== All demo data in one object ===== */
@@ -1473,7 +2201,8 @@ const SCHED=(()=>{
  function tile(v){const n=v&&v.ok?next(v):null;if(!n)return `<section class="card v11next v11empty" id="v11next" aria-labelledby="v11nh"><h2 id="v11nh">Next session</h2>${label}<p><strong>${NS}</strong>. There are no scheduled sessions, so no next class is shown.</p></section>`;
   const c=v.courses[n.courseId];return `<section class="card v11next" id="v11next" aria-labelledby="v11nh"><h2 id="v11nh">Next session in this synthetic week</h2>${label}<p><strong>${esc(DAYN[n.day])} ${fmtT(n.start)} PT</strong> · ${esc(c.subject)} (${esc(c.id)}) · ${esc(n.sessionType)} · ${fmtDur(n.durationMin)}</p><p class="sub">Shown for planning only. Nothing is enrolled, assigned or released.</p></section>`}
  function view(){const d=data(),v=validate(d);
-  const head=`<h1>Weekly schedule</h1>${label}${demo}<p class="v11tz">Week runs Monday to Sunday. All times are local time, <strong>America/Los_Angeles</strong> (Pacific Time).</p>`;
+  const y1entry=`<p class="v11y1entry"><a class="btn ghost" href="#/schedule/year1">Year 1 outline (PREVIEW)</a></p>`;
+  const head=`<h1>Weekly schedule</h1>${label}${demo}${y1entry}<p class="v11tz">Week runs Monday to Sunday. All times are local time, <strong>America/Los_Angeles</strong> (Pacific Time).</p>`;
   if(!v.ok)return head+`<section class="card v11err" id="v11err" role="alert" aria-labelledby="v11eh"><h2 id="v11eh">Schedule data rejected</h2><p>The embedded schedule data failed validation, so no sessions, totals or next class are shown. Nothing was guessed.</p><ul>${v.errors.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`+tile(null)+fallback();
   const ev=scheduled(v),tot=ev.reduce((a,e)=>a+e.durationMin,0),[lo,hi]=v.data.targetHoursPerWeek,th=tot/60,st=th<lo?"below":th>hi?"above":"within";
   const days=DAYS.map(dy=>{const l=ev.filter(e=>e.day===dy).sort((a,b)=>a.start<b.start?-1:1),m=l.reduce((a,e)=>a+e.durationMin,0);
@@ -1549,6 +2278,81 @@ routes.course=id=>COURSES.page(id);
 {const _l=routes.library;routes.library=function(){return _l.call(routes)+COURSES.list("lib")}}
 {const _a=routes.admin;routes.admin=function(sub){const h=_a.call(routes,sub);return (sub||"overview")==="overview"?h+COURSES.list("admin"):h}}
 document.addEventListener("click",e=>{const a=e.target.closest(".v11toc a[data-sec]");if(a){e.preventDefault();const s=document.getElementById(a.dataset.sec);if(s){s.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});s.setAttribute("tabindex","-1");s.focus({preventScroll:true})}}});
+
+/* ===== V11 Year 1 preview outline (PREVIEW, not open, not released) ===== */
+const YEAR1=(()=>{
+ const BANNER="Preview outline: not yet released. Weeks open only when Daniel approves.";
+ const PREVIEW="PREVIEW";
+ const NOT_OPEN="not open";
+ const NEO="Waits on the MacBook Neo check. Not open.";
+ const FORBIDDEN_STATES=["open","released","graded","student released","student_released"];
+ let raw=null;
+ function embedded(){try{return JSON.parse(document.getElementById("v11-year1-data").textContent)}catch(e){return {__parseError:String(e.message||e)}}}
+ function validate(d){const er=[];
+  if(!d||typeof d!=="object"||Array.isArray(d))return {ok:false,errors:["Year 1 outline is not a JSON object"+(d&&d.__parseError?": "+d.__parseError:"")+"."]};
+  if(d.__parseError)return {ok:false,errors:["Year 1 JSON could not be parsed: "+d.__parseError]};
+  if(!Array.isArray(d.weeks))er.push("weeks must be a list.");
+  else{
+   if(d.weeks.length!==48)er.push("Year 1 must list exactly 48 weeks (found "+d.weeks.length+").");
+   const seen={};let hours=0,prev=0,contig=d.weeks.length===48;
+   d.weeks.forEach((w,i)=>{const p="weeks["+i+"]";
+    if(!w||typeof w!=="object"){er.push(p+": missing week object.");contig=false;return}
+    if(!Number.isInteger(w.week)||w.week<1){er.push(p+": invalid week number.");contig=false}
+    else if(seen[w.week]){er.push(p+": duplicate week "+w.week+".");contig=false}
+    else{seen[w.week]=1;if(w.week!==i+1)contig=false}
+    if(typeof w.hours!=="number"||!(w.hours>0))er.push(p+": invalid hours.");else hours+=w.hours;
+    if(!Array.isArray(w.topics))er.push(p+": topics must be a list.");
+    if(w.project_milestones!==undefined&&!Array.isArray(w.project_milestones))er.push(p+": project_milestones must be a list.");
+    const st=String(w.status||w.state||w.release||"").toLowerCase().replace(/[_-]+/g," ");
+    if(FORBIDDEN_STATES.includes(st))er.push(p+": week must not be marked "+st+".");
+   });
+   if(d.weeks.length===48&&!contig)er.push("weeks must be contiguous from 1 to 48.");
+   if(d.weeks.length&&hours!==720)er.push("hours sum to "+hours+", expected 720.");
+  }
+  return er.length?{ok:false,errors:er}:{ok:true,data:d}}
+ const data=()=>raw===null?embedded():raw;
+ const badge=`<span class="v11y1badge" data-y1-status="preview">${PREVIEW} (${NOT_OPEN})</span>`;
+ function banner(){return `<p class="v11y1banner" id="v11y1banner" role="status" data-y1-banner>${esc(BANNER)}</p>`}
+ function err(v){return `<section class="card v11y1err v11err" id="v11y1err" role="alert" aria-labelledby="v11y1eh"><h2 id="v11y1eh">Year 1 outline rejected</h2><p>The Year 1 preview data failed validation, so no terms, weeks or totals are shown. Nothing was guessed and no week is open.</p><ul>${v.errors.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`}
+ function weekObj(v,n){return v.data.weeks.find(w=>w.week===n)||null}
+ function neoNote(n){return (n===1||n===2)?`<p class="v11y1hold" data-neo-check="true">${esc(NEO)}</p>`:""}
+ function msList(w){const ms=w.project_milestones||[];return ms.length?`<h3>Milestones</h3><ul class="v11y1ms" data-y1-milestones>${ms.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
+ function topics(w){return `<ul class="v11y1topics">${(w.topics||[]).map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`}
+ function links(extra){return `<p class="v11y1links">${extra}<a class="btn ghost" href="#/schedule">Weekly schedule</a></p>`}
+ function head(title){return `<h1>${esc(title)}</h1>${badge}${demo}${banner()}`}
+ function overview(v){const d=v.data,terms=Array.isArray(d.terms)?d.terms:[];
+  const proj=(Array.isArray(d.projects)?d.projects:[]).map(p=>`<section class="card v11y1proj"><h2>${esc(p.name||"Project")}</h2><p>${esc(p.summary||"")}</p>${p.milestones&&p.milestones.length?`<p class="sub">Planned milestones (preview only, not open): ${p.milestones.map(m=>`Week ${m.week} — ${esc(m.name)}`).join("; ")}.</p>`:""}</section>`).join("");
+  const blocks=terms.map(t=>{const [a,b]=(String(t.weeks||"").split("-").map(Number));const weeks=v.data.weeks.filter(w=>w.week>=a&&w.week<=b);
+   return `<section class="card v11y1term" data-y1-term="${t.term}" aria-labelledby="v11y1t-${t.term}"><h2 id="v11y1t-${t.term}">Term ${t.term} <span class="sub">(Weeks ${esc(String(t.weeks))} · ${t.hours} h)</span></h2><p>${esc(t.focus||"")}</p><a class="v11y1tlink" href="#/schedule/year1/term/${t.term}">View Term ${t.term} (PREVIEW)</a><ul class="v11y1weeks">${weeks.map(w=>weekRow(w)).join("")}</ul></section>`}).join("");
+  return head("Course 101 Year 1 outline")+`<p class="v11y1hold" data-y1-status-summary>Every week below is ${PREVIEW} (${NOT_OPEN}). No week is open, released or graded.</p>
+  <section class="card v11y1intro" id="v11y1intro"><p><strong>${esc(d.calendar||"Option A")}</strong> · ${d.hours_per_week||15} h/week · ${d.year_1_weeks||48} weeks · ${d.year_1_hours||720} planned hours · 4 terms of 12 weeks.</p><p>${esc(d.open_rule||"This is a preview of Year 1. No week is open yet. Weeks 1–2 wait on the MacBook Neo check.")}</p><p class="sub">Required coursework cost: $0. This outline does not open any materials.</p></section>
+  ${proj}<div class="v11y1terms" id="v11y1terms">${blocks}</div>${links("")}`}
+ function weekRow(w){const neo=w.week===1||w.week===2?`<span class="v11y1hold"> ${esc(NEO)}</span>`:"";
+  const ms=(w.project_milestones||[]).length?`<span class="sub"> · ${(w.project_milestones).map(esc).join("; ")}</span>`:"";
+  return `<li class="v11y1week" data-y1-week="${w.week}" data-y1-status="preview" data-y1-open="false"><a href="#/schedule/year1/week/${w.week}" aria-label="Week ${w.week}, ${w.hours} hours, ${PREVIEW}, ${NOT_OPEN}${w.week<=2?", waits on the MacBook Neo check":""}"><span class="v11y1wn">Week ${w.week}</span> <span class="sub">${w.hours} h</span> ${badge}${neo}${ms}</a></li>`}
+ function termView(v,n){const t=(v.data.terms||[]).find(x=>x.term===n);if(!t)return head("Term not found")+`<p>No Term ${esc(String(n))} exists in this preview.</p>`+links(`<a class="btn ghost" href="#/schedule/year1">Year 1 outline</a>`);
+  const [a,b]=String(t.weeks).split("-").map(Number);const weeks=v.data.weeks.filter(w=>w.week>=a&&w.week<=b);
+  return head("Term "+t.term+" (PREVIEW)")+`<p class="v11y1hold">This term is ${PREVIEW} (${NOT_OPEN}). No week in this term is open, released or graded.</p>
+  <section class="card v11y1term" data-y1-term="${t.term}"><p><strong>Weeks ${esc(String(t.weeks))}</strong> · ${t.hours} h</p><p>${esc(t.focus||"")}</p><ul class="v11y1weeks">${weeks.map(w=>`<li class="card v11y1week" data-y1-week="${w.week}" data-y1-status="preview" data-y1-open="false"><a href="#/schedule/year1/week/${w.week}" aria-label="Week ${w.week}, ${w.hours} hours, ${PREVIEW}, ${NOT_OPEN}${w.week<=2?", waits on the MacBook Neo check":""}"><span class="v11y1wn">Week ${w.week}</span> <span class="sub">${w.hours} h</span> ${badge}${w.week<=2?`<span class="v11y1hold"> ${esc(NEO)}</span>`:""}</a>${topics(w)}${msList(w)}${w.note?`<p class="sub">${esc(w.note)}</p>`:""}</li>`).join("")}</ul></section>`+links(`<a class="btn ghost" href="#/schedule/year1">Year 1 outline</a>`)}
+ function weekView(v,n){const w=weekObj(v,n);if(!w)return head("Week not found")+`<p>No Week ${esc(String(n))} exists in this preview.</p>`+links(`<a class="btn ghost" href="#/schedule/year1">Year 1 outline</a>`);
+  const term=w.term||Math.ceil(w.week/12);
+  return head("Week "+w.week+" (PREVIEW)")+`<section class="card v11y1week" id="v11y1week" data-y1-week="${w.week}" data-y1-status="preview" data-y1-open="false" data-hours="${w.hours}">
+  <p>${badge} <strong>${w.hours} hours</strong> · Term ${term} · ${PREVIEW} (${NOT_OPEN})</p>${neoNote(w.week)}
+  <h2>Topics</h2>${topics(w)}${msList(w)}${w.note?`<p class="sub">${esc(w.note)}</p>`:""}
+  <p class="v11y1hold">This week is not open, not released and not graded.</p></section>`+links(`<a class="btn ghost" href="#/schedule/year1/term/${term}">Term ${term}</a><a class="btn ghost" href="#/schedule/year1">Year 1 outline</a>`)}
+ function view(){const parts=location.hash.replace(/^#\/?/,"").split("/");
+  const v=validate(data());
+  if(!v.ok)return head("Course 101 Year 1 outline")+err(v)+links("");
+  if(parts[2]==="term"){const n=Number(parts[3]);return termView(v,n)}
+  if(parts[2]==="week"){const n=Number(parts[3]);return weekView(v,n)}
+  return overview(v)}
+ function route(){const h=location.hash.replace(/^#\/?/,"").split("/");
+  if(h[0]==="schedule"&&h[1]==="year1")return view();
+  return null}
+ return {view,route,validate,BANNER,setData(d){raw=d},reset(){raw=null},embedded}
+})();
+window.__year1=YEAR1;
+{const _s=routes.schedule;routes.schedule=function(){const y=YEAR1.route();return y!==null?y:_s()}}
 
 window.addEventListener("hashchange",render);render();
 </script>
